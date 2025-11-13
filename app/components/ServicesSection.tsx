@@ -25,7 +25,7 @@ const ServicesSection: React.FC = () => {
   return (
     <section
     id="services"
-      className={`flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 py-14 md:py-20 px-4 md:px-0 bg-white transition-none`}
+      className={`hidden flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 py-14 md:py-20 px-4 md:px-0 bg-white transition-none`}
     >
       {/* Left Image (keep always left) */}
       <div className="flex justify-center md:justify-start flex-shrink-0 w-[220px] h-[180px] md:w-[433px] md:h-[364px]">
