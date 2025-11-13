@@ -12,7 +12,7 @@ const HomeHero: React.FC = () => {
     <div
       className="w-full min-h-screen bg-cover bg-center flex justify-center items-center -mt-10 md:-mt-16"
       style={{
-        backgroundImage: "url('/bg-image.svg')",
+        backgroundImage: "url('/bg-image.webp')",
       }}
     >
       <div className="flex flex-col md:flex-row justify-between items-center w-[90%] max-w-6xl">
@@ -59,14 +59,22 @@ const HomeHero: React.FC = () => {
         </div>
 
         {/* Right Section (Hidden on small & medium screens) */}
-        <div
-          className="hidden lg:block w-[390px] h-[393px] flex-shrink-0 rounded-[15px] bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/side-hero.svg')",
-            backgroundSize: "contain",
-            backgroundColor: "lightgray",
-          }}
-        />
+<div
+  className="rounded-[15px] border-t-[7.5px] border-r-[7.5px] border-[#CF3136] overflow-hidden"
+  style={{
+    width: "390px",
+    height: "393px"
+  }}
+>
+  <Image
+    src="/side-hero.svg"
+    alt="Image"
+    width={390}
+    height={393}
+    className="object-cover w-full h-full"
+  />
+</div>
+
       </div>
     </div>
   );
