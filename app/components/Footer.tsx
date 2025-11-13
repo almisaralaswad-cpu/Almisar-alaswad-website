@@ -39,8 +39,8 @@ const Footer = () => {
               <div className="flex flex-col gap-[27px]" style={beVietnamFont}>
                 <h3 className={headingStyle}>{intl.formatMessage({ id: "footer.company" })}</h3>
                 <div className="flex flex-col gap-[18px]">
-                  <Link href="/about" className={linkStyle}>{intl.formatMessage({ id: "footer.aboutUs" })}</Link>
-                  <Link href="/service" className={linkStyle}>{intl.formatMessage({ id: "footer.services" })}</Link>
+                  <Link href="#about" className={linkStyle}>{intl.formatMessage({ id: "footer.aboutUs" })}</Link>
+                  <Link href="#services" className={linkStyle}>{intl.formatMessage({ id: "footer.services" })}</Link>
                   <Link href="/team" className={linkStyle}>{intl.formatMessage({ id: "footer.ourTeam" })}</Link>
                 </div>
               </div>

@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { useIntl } from 'react-intl';
+import Link from 'next/link';
 
 const AboutUs: React.FC = () => {
   const intl = useIntl();
@@ -33,9 +34,11 @@ const AboutUs: React.FC = () => {
         {intl.formatMessage({ id: 'service.airQuality.description' })}
       </p>
 
-      <button className="bg-[#CF3D31] text-white rounded-[4.5px] px-[15px] py-[9px] text-[12px] hover:bg-white hover:text-black hover:border hover:border-[#666] transition">
-        {intl.formatMessage({ id: 'button.bookNow' })}
-      </button>
+      <Link href="#contact">
+        <button className="bg-[#CF3D31] text-white rounded-[4.5px] px-[15px] py-[9px] text-[12px] hover:bg-white hover:text-black hover:border hover:border-[#666] transition">
+          {intl.formatMessage({ id: 'button.bookNow' })}
+        </button>
+      </Link>
     </div>
 
     {/* Middle Divider — Only show on desktop */}
