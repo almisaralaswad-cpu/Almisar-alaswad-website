@@ -60,7 +60,7 @@ const HomeHero: React.FC = () => {
 
         {/* Right Section (Hidden on small & medium screens) */}
 <div
-  className="rounded-[15px] border-t-[7.5px] border-r-[7.5px] border-[#CF3136] overflow-hidden"
+  className="hidden rounded-[15px] border-t-[7.5px] border-r-[7.5px] border-[#CF3136] overflow-hidden"
   style={{
     width: "390px",
     height: "393px"
