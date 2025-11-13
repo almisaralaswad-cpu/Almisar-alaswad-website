@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "Carpentry and wood flooring",
     "Almismar Alaswad Technical Services"
   ],
-  authors: [{ name: "Almismar Alaswad Technical Services", url: "https://yourwebsite.com" }],
+  authors: [{ name: "Almismar Alaswad Technical Services", url: "https://www.almismar-alaswad.com/" }],
   viewport: { width: 'device-width', initialScale: 1 },
   themeColor: '#FCC417',
   manifest: '/site.webmanifest',
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Almismar Alaswad Technical Services",
     description: "Offering expert plumbing, electrical, painting, tiling, plaster, electromechanical maintenance, ceilings, wallpaper, and carpentry services for all projects.",
-    url: "https://yourwebsite.com",
+    url: "https://www.almismar-alaswad.com/",
     siteName: "Almismar Alaswad Technical Services",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Almismar Alaswad Technical Services" }],
+    images: [{ url: "/your-lower-image.svg", width: 1200, height: 630, alt: "Almismar Alaswad Technical Services" }],
     locale: "en_US",
     type: "website",
   },
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "Almismar Alaswad Technical Services",
     description: "Expert plumbing, electrical, painting, tiling, plaster, electromechanical maintenance, ceilings, wallpaper, and carpentry services.",
     creator: "@your_twitter_handle",
-    images: ["/og-image.png"]
+    images: ["/your-lower-image.svg"]
   }
 };
 
@@ -66,25 +66,27 @@ const StructuredData = () => (
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Almismar Alaswad Technical Services",
-      "image": "https://yourwebsite.com/og-image.png",
-      "url": "https://yourwebsite.com",
-      "telephone": "+91-XXXXXXXXXX",
+      "image": "https://www.almismar-alaswad.com/your-lower-image.svg",
+      "url": "https://www.almismar-alaswad.com/",
+      "telephone": ["+971558956260", "+971552057197"],
+      "email": "abdullahelian6@gmail.com",
       "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Your Street Address",
-        "addressLocality": "Your City",
-        "postalCode": "Your Postal Code",
-        "addressCountry": "IN"
+      "@type": "PostalAddress",
+      "streetAddress": "Office M6-299, Al Khabeesi Building, Plot 128-246",
+      "addressLocality": "Al Khabeesi",
+      "addressRegion": "Dubai",
+      "postalCode": "",
+      "addressCountry": "AE"
       },
       "sameAs": [
         "https://www.facebook.com/yourpage",
         "https://www.linkedin.com/company/yourpage",
         "https://twitter.com/your_twitter_handle"
       ],
-      "priceRange": "₹₹",
+      "priceRange": "AED",
       "areaServed": {
-        "@type": "City",
-        "name": "Your City/Region"
+      "@type": "City",
+      "name": "Dubai"
       },
       "makesOffer": [
         { "@type": "Offer", "itemOffered": "Plumbing and Sanitation Work" },
