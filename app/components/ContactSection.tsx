@@ -83,18 +83,18 @@ const ContactPage: React.FC = () => {
         <input
           type="text"
           placeholder={intl.formatMessage({ id: 'contact.form.name' })}
-          className="border border-gray-300 rounded-lg px-4 py-2 md:py-[9px] text-sm md:text-[13px]"
+          className="border border-gray-300 rounded-lg px-4 py-2 md:py-[9px] text-sm md:text-[13px] placeholder:text-[#666666] text-[#111D15] "
         />
 
         <input
           type="email"
           placeholder={intl.formatMessage({ id: 'contact.form.email' })}
-          className="border border-gray-300 rounded-lg px-4 py-2 md:py-[9px] text-sm md:text-[13px]"
+          className="border border-gray-300 rounded-lg px-4 py-2 md:py-[9px] text-sm md:text-[13px] placeholder:text-[#666666] text-[#111D15] "
         />
 
         <textarea
           placeholder={intl.formatMessage({ id: 'contact.form.message' })}
-          className="border border-gray-300 rounded-lg px-4 py-2 h-24 resize-none text-sm md:text-[13px]"
+          className="border border-gray-300 rounded-lg px-4 py-2 h-24 resize-none text-sm md:text-[13px] placeholder:text-[#666666] text-[#111D15]"
         />
 
         <button
