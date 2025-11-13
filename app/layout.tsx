@@ -187,7 +187,9 @@ const StructuredData = () => (
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <meta name="google-site-verification" content="bhldHU57EnRN1IQ5_gJ6Tr4TDCeUBjXG_VYuey2MmCw" />
+      <head>
+        <meta name="google-site-verification" content="bhldHU57EnRN1IQ5_gJ6Tr4TDCeUBjXG_VYuey2MmCw" />
+      </head>
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         {/* Inject SEO Schema */}
         <StructuredData />
