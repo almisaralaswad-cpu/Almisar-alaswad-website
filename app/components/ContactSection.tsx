@@ -8,7 +8,7 @@ const ContactPage: React.FC = () => {
   const intl = useIntl();
 
   return (
-    <section className="bg-white py-16 px-6 md:px-0">
+    <section id="contact" className="bg-white py-16 px-6 md:px-0">
       <div className="max-w-[1000px] mx-auto flex flex-col md:flex-row gap-12">
         {/* Left Column - Find Us */}
         <div className="flex-1 flex flex-col gap-6">

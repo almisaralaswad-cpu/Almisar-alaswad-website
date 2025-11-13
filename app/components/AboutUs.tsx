@@ -8,7 +8,7 @@ const AboutUs: React.FC = () => {
   const intl = useIntl();
 
   return (
-    <section className="flex flex-col bg-white w-full px-4 md:px-0">
+    <section id="about"  className="flex flex-col bg-white w-full px-4 md:px-0">
       {/* Existing About Us Section */}
       <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-36 py-20">
         {/* Left Card */}

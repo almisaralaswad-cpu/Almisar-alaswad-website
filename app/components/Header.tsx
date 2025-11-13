@@ -13,13 +13,14 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const intl = useIntl();
 
-  const navLinks = [
-    { href: "/", id: "header.home" },
-    { href: "/about", id: "header.about" },
-    { href: "/service", id: "header.service" },
-    { href: "/blog", id: "header.blog" },
-    { href: "/contact", id: "header.contact" },
-  ];
+const navLinks = [
+  { href: "/", id: "header.home" },
+  { href: "/#about", id: "header.about" },
+  { href: "/#services", id: "header.service" },
+  { href: "/#feedback", id: "header.blog" },
+  { href: "/#contact", id: "header.contact" },
+];
+
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white text-black border-b border-gray-200 h-[137px] z-50 ">
