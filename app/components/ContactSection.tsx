@@ -90,9 +90,10 @@ const ContactPage: React.FC = () => {
 
             {/* Address */}
             <div className="flex items-center gap-4 bg-white rounded-lg shadow px-4 py-3 md:py-2">
-              <div className="bg-[#005BAA] w-10 h-10 flex items-center justify-center rounded-full text-white">
-                <MapPin size={16} />
-              </div>
+              <div className="bg-[#005BAA] w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full text-white">
+  <MapPin size={16} />
+</div>
+
               <div className="text-sm text-[#111D15]">
                 <p className="font-medium">{intl.formatMessage({ id: 'contact.addressTitle' })}</p>
                 <p className="text-gray-500 text-xs">
