@@ -2,6 +2,7 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import IntlProviderWrapper from "./components/IntlProviderWrapper";
+import AOSWrapper from "./components/AOSWrapper"; // ✅ Add this
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import Script from "next/script";
@@ -39,10 +40,14 @@ export const metadata: Metadata = {
     "Almismar Alaswad",
   ],
 
-  authors: [{ name: "Almismar Alaswad Technical Services", url: "https://www.almismar-alaswad.com" }],
+  authors: [
+    {
+      name: "Almismar Alaswad Technical Services",
+      url: "https://www.almismar-alaswad.com",
+    },
+  ],
 
   viewport: { width: "device-width", initialScale: 1 },
-
   themeColor: "#CF3D31",
 
   alternates: {
@@ -75,25 +80,25 @@ export const metadata: Metadata = {
   },
 
   // =========================
-    //      OPEN GRAPH
-    // =========================
-    openGraph: {
-      title: "Almismar Alaswad Technical Services Dubai",
-      description:
-        "Expert plumbing, electrical, painting, tiling, plaster, electromechanical maintenance, ceilings, wallpaper, and carpentry services in Dubai and the UAE.",
-      url: "https://www.almismar-alaswad.com",
-      siteName: "Almismar Alaswad Technical Services",
-      images: [
-        {
-          url: "/your-lower-image.svg",
-          width: 1200,
-          height: 630,
-          alt: "Almismar Alaswad Technical Services Dubai",
-        },
-      ],
-      locale: "en_US",
-      type: "website",
-    },
+  //      OPEN GRAPH
+  // =========================
+  openGraph: {
+    title: "Almismar Alaswad Technical Services Dubai",
+    description:
+      "Expert plumbing, electrical, painting, tiling, plaster, electromechanical maintenance, ceilings, wallpaper, and carpentry services in Dubai and the UAE.",
+    url: "https://www.almismar-alaswad.com",
+    siteName: "Almismar Alaswad Technical Services",
+    images: [
+      {
+        url: "/your-lower-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Almismar Alaswad Technical Services Dubai",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 
   // =========================
   //        TWITTER
@@ -114,7 +119,6 @@ export const metadata: Metadata = {
 // =========================
 const StructuredData = () => (
   <>
-    {/* LocalBusiness Schema */}
     <Script id="localbusiness-jsonld" type="application/ld+json">
       {JSON.stringify({
         "@context": "https://schema.org",
@@ -127,7 +131,8 @@ const StructuredData = () => (
 
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Office M6-299, Al Khabeesi Building, Plot 128-246",
+          streetAddress:
+            "Office M6-299, Al Khabeesi Building, Plot 128-246",
           addressLocality: "Al Khabeesi",
           addressRegion: "Dubai",
           addressCountry: "AE",
@@ -146,27 +151,34 @@ const StructuredData = () => (
         ],
 
         priceRange: "AED",
-
-        areaServed: {
-          "@type": "City",
-          name: "Dubai",
-        },
+        areaServed: { "@type": "City", name: "Dubai" },
 
         makesOffer: [
           { "@type": "Offer", itemOffered: "Plumbing and Sanitation Work" },
-          { "@type": "Offer", itemOffered: "Professional Painting Services" },
+          {
+            "@type": "Offer",
+            itemOffered: "Professional Painting Services",
+          },
           { "@type": "Offer", itemOffered: "Floor & Wall Tiling Works" },
           { "@type": "Offer", itemOffered: "Plaster Works" },
-          { "@type": "Offer", itemOffered: "Electrical Repair & Maintenance" },
-          { "@type": "Offer", itemOffered: "Electromechanical Maintenance" },
+          {
+            "@type": "Offer",
+            itemOffered: "Electrical Repair & Maintenance",
+          },
+          {
+            "@type": "Offer",
+            itemOffered: "Electromechanical Maintenance",
+          },
           { "@type": "Offer", itemOffered: "Ceilings & Partitions" },
-          { "@type": "Offer", itemOffered: "Professional Wallpaper Fixing" },
+          {
+            "@type": "Offer",
+            itemOffered: "Professional Wallpaper Fixing",
+          },
           { "@type": "Offer", itemOffered: "Carpentry & Wood Flooring" },
         ],
       })}
     </Script>
 
-    {/* WebSite Schema (Google Sitelinks) */}
     <Script id="website-jsonld" type="application/ld+json">
       {JSON.stringify({
         "@context": "https://schema.org",
@@ -184,14 +196,26 @@ const StructuredData = () => (
   </>
 );
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="bhldHU57EnRN1IQ5_gJ6Tr4TDCeUBjXG_VYuey2MmCw" />
+        <meta
+          name="google-site-verification"
+          content="bhldHU57EnRN1IQ5_gJ6Tr4TDCeUBjXG_VYuey2MmCw"
+        />
       </head>
+
       <body className={`${inter.className} flex flex-col min-h-screen`}>
-        {/* Inject SEO Schema */}
+
+        {/* GLOBAL AOS WRAPPER */}
+        <AOSWrapper />
+
+        {/* Structured Data */}
         <StructuredData />
 
         <IntlProviderWrapper>
@@ -201,6 +225,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <Footer />
         </IntlProviderWrapper>
+
       </body>
     </html>
   );

@@ -16,18 +16,26 @@ const HomeHero: React.FC = () => {
       }}
     >
       <div className="flex flex-col md:flex-row justify-between items-center w-[90%] max-w-6xl">
-        
+
         {/* Left Section */}
-        <div className="flex flex-col gap-10">
-          
+        <div className="flex flex-col gap-10" data-aos="fade-right">
+
           {/* Text + Buttons */}
           <div className="flex flex-col gap-6 text-center md:text-left">
-            <h1 className="text-[#111D15] text-[28px] md:text-[36px] font-bold leading-snug max-w-[500px] font-['Be Vietnam Pro']">
+            <h1
+              className="text-[#111D15] text-[28px] md:text-[36px] font-bold leading-snug max-w-[500px] font-['Be Vietnam Pro']"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               {intl.formatMessage({ id: "hero.title" })}
             </h1>
 
             {/* Buttons */}
-            <div className="flex gap-4 justify-center md:justify-start">
+            <div
+              className="flex gap-4 justify-center md:justify-start"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
               <Link
                 href="#contact"
                 className="rounded-[4.5px] bg-[#CF3D31] flex justify-center items-center gap-[7.5px] px-6 py-3 text-white font-['Be Vietnam Pro'] text-[12px] font-semibold"
@@ -45,35 +53,40 @@ const HomeHero: React.FC = () => {
           </div>
 
           {/* Lower Image */}
-          <div className="w-full max-w-[408px] aspect-[204/65] mx-auto md:mx-0">
-        <Image
-            src="/your-lower-image.svg"
-            alt={intl.formatMessage({ id: "hero.imageAlt" })}
-            width={408}
-            height={130}
-            className="object-contain w-full h-full"
-            priority
-        />
+          <div
+            className="w-full max-w-[408px] aspect-[204/65] mx-auto md:mx-0"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <Image
+              src="/your-lower-image.svg"
+              alt={intl.formatMessage({ id: "hero.imageAlt" })}
+              width={408}
+              height={130}
+              className="object-contain w-full h-full"
+              priority
+            />
+          </div>
         </div>
 
+        {/* Right Section (LG only) */}
+        <div
+          className="hidden lg:block rounded-[15px] border-t-[7.5px] border-r-[7.5px] border-[#CF3136] overflow-hidden"
+          style={{
+            width: "390px",
+            height: "393px"
+          }}
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
+          <Image
+            src="/side-hero.svg"
+            alt="Image"
+            width={390}
+            height={393}
+            className="object-cover w-full h-full"
+          />
         </div>
-
-        {/* Right Section (Hidden on small & medium screens) */}
-<div
-  className="hidden lg:block rounded-[15px] border-t-[7.5px] border-r-[7.5px] border-[#CF3136] overflow-hidden"
-  style={{
-    width: "390px",
-    height: "393px"
-  }}
->
-  <Image
-    src="/side-hero.svg"
-    alt="Image"
-    width={390}
-    height={393}
-    className="object-cover w-full h-full"
-  />
-</div>
 
       </div>
     </div>
