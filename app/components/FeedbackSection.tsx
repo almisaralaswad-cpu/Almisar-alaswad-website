@@ -9,24 +9,19 @@ const FeedbackSection: React.FC = () => {
 
   // Testimonials data using intl messages
   const testimonials = [
+      {
+      name: intl.formatMessage({ id: 'testimonial.jane.name' }),
+      business: intl.formatMessage({ id: 'testimonial.jane.business' }),
+      comment: intl.formatMessage({ id: 'testimonial.jane.comment' }),
+      image: '/profile.jpg',
+    },
     {
       name: intl.formatMessage({ id: 'testimonial.robert.name' }),
       business: intl.formatMessage({ id: 'testimonial.robert.business' }),
       comment: intl.formatMessage({ id: 'testimonial.robert.comment' }),
-      image: '/profile.svg',
+      image: '/profile.webp',
     },
-    {
-      name: intl.formatMessage({ id: 'testimonial.jane.name' }),
-      business: intl.formatMessage({ id: 'testimonial.jane.business' }),
-      comment: intl.formatMessage({ id: 'testimonial.jane.comment' }),
-      image: '/profile.svg',
-    },
-    {
-      name: intl.formatMessage({ id: 'testimonial.john.name' }),
-      business: intl.formatMessage({ id: 'testimonial.john.business' }),
-      comment: intl.formatMessage({ id: 'testimonial.john.comment' }),
-      image: '/profile.svg',
-    },
+  
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
