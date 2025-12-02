@@ -107,7 +107,7 @@ const navLinks = [
           })}
 
           <Link
-            href="/get-a-quote"
+            href="#contact"
             className="w-full text-center text-white text-lg font-medium bg-[#CF3D31] rounded-[4.5px] px-4 py-3 hover:bg-opacity-90 transition-all"
             style={{ fontFamily: 'Poppins, sans-serif' }}
             onClick={() => setIsMobileMenuOpen(false)}
