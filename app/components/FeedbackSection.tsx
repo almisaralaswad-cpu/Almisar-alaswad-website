@@ -7,9 +7,9 @@ import { useIntl } from 'react-intl';
 const FeedbackSection: React.FC = () => {
   const intl = useIntl();
 
-  // Testimonials data using intl messages
+  // Testimonials data
   const testimonials = [
-      {
+    {
       name: intl.formatMessage({ id: 'testimonial.jane.name' }),
       business: intl.formatMessage({ id: 'testimonial.jane.business' }),
       comment: intl.formatMessage({ id: 'testimonial.jane.comment' }),
@@ -21,15 +21,18 @@ const FeedbackSection: React.FC = () => {
       comment: intl.formatMessage({ id: 'testimonial.robert.comment' }),
       image: '/profile.webp',
     },
-  
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const handlePrev = () => setCurrentIndex(prev => (prev === 0 ? testimonials.length - 1 : prev - 1));
-  const handleNext = () => setCurrentIndex(prev => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  const handlePrev = () =>
+    setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+
+  const handleNext = () =>
+    setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+
   const current = testimonials[currentIndex];
 
-  // SVGs
+  // SVG Icons
   const LeftArrow = (
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
       <g clipPath="url(#clip0_0_83)">
@@ -61,29 +64,50 @@ const FeedbackSection: React.FC = () => {
   );
 
   return (
-    <div className="flex justify-center items-center bg-[#FFFFFF] px-6 py-16">
-      <section id="testimonials" className="flex flex-col md:flex-row justify-between w-full max-w-[1000px] gap-6 md:gap-[52.5px]">
-        {/* Left Column */}
-        <div className="flex flex-col gap-6 w-full md:w-[375px] order-1">
-          <h2 className="text-[#111D15] font-['Be Vietnam Pro'] font-semibold text-[33px] leading-[120%]">
+    <div className="flex justify-center items-center bg-[#FFFFFF] px-6 py-16 overflow-x-hidden">
+
+      <section
+        id="testimonials"
+        className="flex flex-col md:flex-row justify-between w-full max-w-[1000px] gap-10"
+      >
+
+        {/* LEFT SIDE */}
+        <div
+          className="flex flex-col gap-6 w-full md:w-[375px] order-1"
+          data-aos="fade-right"
+        >
+          <h2
+            className="text-[#111D15] font-['Be Vietnam Pro'] font-semibold text-[33px] leading-[120%]"
+            data-aos="fade-up"
+          >
             {intl.formatMessage({ id: 'feedback.heading' })}
           </h2>
-          <p className="text-[#666] font-['Be Vietnam Pro'] font-normal text-[12px] leading-[160%]">
+
+          <p
+            className="text-[#666] font-['Be Vietnam Pro'] text-[12px] leading-[160%]"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
             {intl.formatMessage({ id: 'feedback.description' })}
           </p>
 
-          {/* Carousel Arrows for Desktop */}
-          <div className="hidden md:flex gap-3 mt-4">
-            {/* Left */}
+          {/* Desktop Arrows */}
+          <div
+            className="hidden md:flex gap-3 mt-4"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
             <div
-              className="flex justify-center items-center p-3 bg-white rounded-[7.099px] border-[0.75px] border-[#005BAA] cursor-pointer"
+              className="flex justify-center items-center p-3 bg-white rounded-[7.099px]
+              border-[0.75px] border-[#005BAA] cursor-pointer hover:bg-gray-100 transition"
               onClick={handlePrev}
             >
               {LeftArrow}
             </div>
-            {/* Right */}
+
             <div
-              className="flex justify-center items-center p-3 bg-[#CF3D31] rounded-[7.099px] cursor-pointer"
+              className="flex justify-center items-center p-3 bg-[#CF3D31]
+              rounded-[7.099px] cursor-pointer hover:bg-opacity-90 transition"
               onClick={handleNext}
             >
               {RightArrow}
@@ -91,47 +115,79 @@ const FeedbackSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column */}
-        <div className="flex flex-col w-full md:w-[450px] order-2">
-          <div className="relative flex flex-col md:flex-row p-4 justify-center items-start gap-4 rounded-[15px] border-t-[7.5px] border-r-[7.5px] border-[#005BAA] bg-white shadow-md">
+        {/* RIGHT SIDE */}
+        <div
+          className="flex flex-col w-full md:w-[450px] order-2"
+          data-aos="fade-left"
+        >
+          <div
+            className="relative flex flex-col md:flex-row p-4 justify-center items-start gap-4
+            rounded-[15px] border-t-[7.5px] border-r-[7.5px] border-[#005BAA]
+            bg-white shadow-md"
+            data-aos="zoom-in"
+            data-aos-delay="250"
+            key={currentIndex} // forces animation on slide change
+          >
             <div className="flex-shrink-0 rounded-[7.5px] border border-[#E6E6E6] overflow-hidden">
-              <Image src={current.image} alt={current.name} width={128} height={183} className="object-cover w-full" />
+              <Image
+                src={current.image}
+                alt={current.name}
+                width={128}
+                height={183}
+                className="object-cover w-full h-full"
+              />
             </div>
 
             <div className="flex flex-col gap-2">
-              <p className="font-['Be Vietnam Pro'] font-medium text-[15px] text-[#111D15]">{current.name}</p>
-              <p className="font-['Be Vietnam Pro'] font-normal text-[12px] text-[#666]">{current.business}</p>
+              <p className="font-['Be Vietnam Pro'] font-medium text-[15px] text-[#111D15]">
+                {current.name}
+              </p>
+
+              <p className="font-['Be Vietnam Pro'] text-[12px] text-[#666]">
+                {current.business}
+              </p>
 
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path d="M10.8217 7.49977L9.7192 3.86982C9.50171 3.15733 8.49672 3.15733 8.28672 3.86982L7.17674 7.49977H3.83929C3.1118 7.49977 2.8118 8.43725 3.40429 8.85725L6.13425 10.8072L5.06177 14.2647C4.84427 14.9622 5.65426 15.5247 6.23175 15.0822L8.99921 12.9822L11.7667 15.0897C12.3442 15.5322 13.1542 14.9697 12.9367 14.2722L11.8642 10.8147L14.5941 8.86475C15.1866 8.43725 14.8866 7.50727 14.1591 7.50727H10.8217V7.49977Z" fill="#FF9800"/>
+                  <svg key={i} width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path
+                      d="M10.8217 7.49977L9.7192 3.86982C9.50171 3.15733 8.49672 3.15733 8.28672 3.86982L7.17674 7.49977H3.83929C3.1118 7.49977 2.8118 8.43725 3.40429 8.85725L6.13425 10.8072L5.06177 14.2647C4.84427 14.9622 5.65426 15.5247 6.23175 15.0822L8.99921 12.9822L11.7667 15.0897C12.3442 15.5322 13.1542 14.9697 12.9367 14.2722L11.8642 10.8147L14.5941 8.86475C15.1866 8.43725 14.8866 7.50727 14.1591 7.50727H10.8217V7.49977Z"
+                      fill="#FF9800"
+                    />
                   </svg>
                 ))}
               </div>
 
-              <p className="text-[#666] font-['Be Vietnam Pro'] font-normal text-[12px] leading-[150%]">
+              <p className="text-[#666] font-['Be Vietnam Pro'] text-[12px] leading-[150%]">
                 {current.comment}
               </p>
             </div>
           </div>
 
-          {/* Mobile Carousel Arrows */}
-          <div className="flex md:hidden gap-3 mt-4 justify-center">
+          {/* Mobile Arrows */}
+          <div
+            className="flex md:hidden gap-3 mt-4 justify-center"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          >
             <div
-              className="flex justify-center items-center p-3 bg-white rounded-[7.099px] border-[0.75px] border-[#005BAA] cursor-pointer"
+              className="flex justify-center items-center p-3 bg-white rounded-[7.099px]
+              border-[0.75px] border-[#005BAA] cursor-pointer hover:bg-gray-100"
               onClick={handlePrev}
             >
               {LeftArrow}
             </div>
+
             <div
-              className="flex justify-center items-center p-3 bg-[#CF3D31] rounded-[7.099px] cursor-pointer"
+              className="flex justify-center items-center p-3 bg-[#CF3D31]
+              rounded-[7.099px] cursor-pointer hover:bg-opacity-90"
               onClick={handleNext}
             >
               {RightArrow}
             </div>
           </div>
         </div>
+
       </section>
     </div>
   );
