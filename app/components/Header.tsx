@@ -17,8 +17,7 @@ const navLinks = [
   { href: "/", id: "header.home" },
   { href: "/#about", id: "header.about" },
   { href: "/#services", id: "header.service" },
-  { href: "/#feedback", id: "header.blog" },
-  { href: "/#contact", id: "header.contact" },
+  { href: "/#testimonials", id: "header.testimonials" },
 ];
 
 
@@ -60,7 +59,7 @@ const navLinks = [
 
           {/* CTA */}
           <Link
-            href="/get-a-quote"
+            href="#contact"
             className="text-white text-xs font-medium bg-[#CF3D31] rounded-[4.5px] px-4 py-2 hover:bg-opacity-90 transition-all flex-shrink-0"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >

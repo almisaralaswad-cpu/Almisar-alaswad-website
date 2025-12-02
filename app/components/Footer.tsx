@@ -24,7 +24,7 @@ const Footer = () => {
               <img
                 src="/almisar-alaswad-logo.svg"
                 alt="MyLogo"
-                className="w-[120px] h-[120px] md:w-[190px] md:h-[197px]" // smaller on mobile
+                className="w-[120px] h-[120px] md:w-[190px] md:h-[197px]"
               />
             </Link>
           </div>
@@ -32,32 +32,31 @@ const Footer = () => {
           {/* Columns */}
           <div className="flex flex-col w-full- md:flex-row md:flex-wrap md:gap-16 gap-8">
 
-            {/* Upper Columns: Company + Know More */}
+            {/* Upper Columns: Company Only (Know More Removed) */}
             <div className="flex flex-row sm:flex-row w-fit justify-between gap-8 md:gap-16">
 
               {/* Column 1: Company */}
               <div className="flex flex-col gap-[27px]" style={beVietnamFont}>
                 <h3 className={headingStyle}>{intl.formatMessage({ id: "footer.company" })}</h3>
                 <div className="flex flex-col gap-[18px]">
-                  <Link href="#about" className={linkStyle}>{intl.formatMessage({ id: "footer.aboutUs" })}</Link>
-                  <Link href="#services" className={linkStyle}>{intl.formatMessage({ id: "footer.services" })}</Link>
-                  <Link href="/team" className={linkStyle}>{intl.formatMessage({ id: "footer.ourTeam" })}</Link>
-                </div>
-              </div>
+                  <Link href="#about" className={linkStyle}>
+                    {intl.formatMessage({ id: "footer.aboutUs" })}
+                  </Link>
 
-              {/* Column 2: Know More */}
-              <div className="flex flex-col gap-[27px]" style={beVietnamFont}>
-                <h3 className={headingStyle}>{intl.formatMessage({ id: "footer.knowMore" })}</h3>
-                <div className="flex flex-col gap-[18px]">
-                  <Link href="/support" className={linkStyle}>{intl.formatMessage({ id: "footer.support" })}</Link>
-                  <Link href="/privacy" className={linkStyle}>{intl.formatMessage({ id: "footer.privacy" })}</Link>
-                  <Link href="/terms" className={linkStyle}>{intl.formatMessage({ id: "footer.terms" })}</Link>
+                  <Link href="#services" className={linkStyle}>
+                    {intl.formatMessage({ id: "footer.services" })}
+                  </Link>
+
+                  {/* Changed: Our Team → Testimonials */}
+                  <Link href="#testimonials" className={linkStyle}>
+                    {intl.formatMessage({ id: "footer.testimonials" }) || "Testimonials"}
+                  </Link>
                 </div>
               </div>
 
             </div>
 
-            {/* Newsletter - full width on mobile */}
+            {/* Newsletter */}
             <div className="flex flex-col gap-[19.5px] w-full sm:w-auto mt-6 sm:mt-0" style={beVietnamFont}>
               <h3 className={headingStyle}>{intl.formatMessage({ id: "footer.newsletter" })}</h3>
               <form className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full">

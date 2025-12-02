@@ -67,7 +67,7 @@ const FeedbackSection: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center bg-[#FFFFFF] px-6 py-16">
-      <section className="flex flex-col md:flex-row justify-between w-full max-w-[1000px] gap-6 md:gap-[52.5px]">
+      <section id="testimonials" className="flex flex-col md:flex-row justify-between w-full max-w-[1000px] gap-6 md:gap-[52.5px]">
         {/* Left Column */}
         <div className="flex flex-col gap-6 w-full md:w-[375px] order-1">
           <h2 className="text-[#111D15] font-['Be Vietnam Pro'] font-semibold text-[33px] leading-[120%]">

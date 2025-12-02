@@ -90,5 +90,7 @@
   "contact.form.name": "الاسم",
   "contact.form.email": "البريد الإلكتروني",
   "contact.form.message": "الرسالة",
-  "contact.form.submit": "إرسال الرسالة"
+  "contact.form.submit": "إرسال الرسالة",
+  "footer.testimonials": "آراء العملاء",
+  "header.testimonials": "آراء العملاء"
 }

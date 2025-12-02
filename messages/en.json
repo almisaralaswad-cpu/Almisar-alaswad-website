@@ -93,6 +93,8 @@
   "contact.form.name": "Name",
   "contact.form.email": "Email",
   "contact.form.message": "Message",
-  "contact.form.submit": "Send Message"
+  "contact.form.submit": "Send Message",
+  "footer.testimonials": "Testimonials",
+  "header.testimonials": "Testimonials"
 }
 
