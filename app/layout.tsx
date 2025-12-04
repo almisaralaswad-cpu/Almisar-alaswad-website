@@ -127,7 +127,7 @@ const StructuredData = () => (
         image: "https://www.almismar-alaswad.com/your-lower-image.svg",
         url: "https://www.almismar-alaswad.com",
         telephone: ["+971558956260", "+971552057197"],
-        email: "abdullahelian6@gmail.com",
+        email: "info@almismar-alaswad.com",
 
         address: {
           "@type": "PostalAddress",
