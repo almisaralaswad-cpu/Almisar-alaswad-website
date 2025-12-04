@@ -1,15 +1,49 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useIntl } from 'react-intl';
+import emailjs from '@emailjs/browser';
 
 const Footer = () => {
   const intl = useIntl();
 
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const headingStyle = "text-white text-[15px] font-bold";
   const linkStyle = "text-white text-xs font-medium hover:text-gray-300 transition-colors";
   const beVietnamFont = { fontFamily: '"Be Vietnam", sans-serif' };
+
+  // --------------------------
+  // Newsletter Send Function
+  // --------------------------
+  const sendNewsletter = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setLoading(true);
+
+    emailjs.send(
+      "service_faijbk2",       // ✅ your service ID
+      "template_0qx0b0k",      // ✅ your template ID
+      {
+        subscriber_email: email,
+        time: new Date().toLocaleString(),
+      },
+      "d8o5ODD7WvOd-hHRa"      // ✅ your public key
+    )
+    .then(() => {
+      alert("Subscribed successfully!");
+      setEmail("");
+      setLoading(false);
+    })
+    .catch((err) => {
+      console.error(err);
+      alert("Subscription failed. Try again.");
+      setLoading(false);
+    });
+  };
 
   return (
     <footer className="w-full bg-[#111D15]">
@@ -32,7 +66,7 @@ const Footer = () => {
           {/* Columns */}
           <div className="flex flex-col w-full- md:flex-row md:flex-wrap md:gap-16 gap-8">
 
-            {/* Upper Columns: Company Only (Know More Removed) */}
+            {/* Upper Columns */}
             <div className="flex flex-row sm:flex-row w-fit justify-between gap-8 md:gap-16">
 
               {/* Column 1: Company */}
@@ -59,9 +93,16 @@ const Footer = () => {
             {/* Newsletter */}
             <div className="flex flex-col gap-[19.5px] w-full sm:w-auto mt-6 sm:mt-0" style={beVietnamFont}>
               <h3 className={headingStyle}>{intl.formatMessage({ id: "footer.newsletter" })}</h3>
-              <form className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full">
+
+              <form 
+                onSubmit={sendNewsletter}
+                className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full"
+              >
                 <input 
-                  type="email" 
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder={intl.formatMessage({ id: "footer.emailPlaceholder" }) || "Email Goes here"}
                   className="
                     bg-[#111D15] w-full sm:w-[218.25px] px-[12px] py-[7.5px] 
@@ -73,8 +114,10 @@ const Footer = () => {
                   "
                   style={beVietnamFont}
                 />
+
                 <button 
                   type="submit"
+                  disabled={loading}
                   className="
                     bg-[#CF3D31] text-white text-xs font-bold
                     rounded-[4.5px] px-[21px] py-[12px]
@@ -82,7 +125,7 @@ const Footer = () => {
                   "
                   style={beVietnamFont}
                 >
-                  {intl.formatMessage({ id: "footer.send" })}
+                  {loading ? "Sending..." : intl.formatMessage({ id: "footer.send" })}
                 </button>
               </form>
             </div>
