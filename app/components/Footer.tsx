@@ -66,9 +66,26 @@ const Footer = () => {
           {/* Columns */}
           <div className="flex flex-col w-full- md:flex-row md:flex-wrap md:gap-16 gap-8">
 
+            {/* Social Media Column */}
+<div className="flex flex-col gap-[27px]" style={beVietnamFont}>
+  <h3 className={headingStyle}>
+    {intl.formatMessage({ id: "footer.socialMedia", defaultMessage: "Social Media" })}
+  </h3>
+
+  <div className="flex flex-col gap-[18px]">
+    <a 
+      href="https://www.instagram.com/almismar.alaswad"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-white text-xs font-medium hover:text-gray-300 transition-colors"
+    >
+      {intl.formatMessage({ id: "footer.instagram", defaultMessage: "Instagram" })}
+    </a>
+  </div>
+</div>
+
             {/* Upper Columns */}
             <div className="flex flex-row sm:flex-row w-fit justify-between gap-8 md:gap-16">
-
               {/* Column 1: Company */}
               <div className="flex flex-col gap-[27px]" style={beVietnamFont}>
                 <h3 className={headingStyle}>{intl.formatMessage({ id: "footer.company" })}</h3>
